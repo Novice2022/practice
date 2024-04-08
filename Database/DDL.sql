@@ -3,7 +3,7 @@ CREATE TABLE customer (
 	name VARCHAR(20) NOT NULL,
 	surname VARCHAR(20) NOT NULL,
 	phone VARCHAR(11) NOT NULL,  -- +7 (929) 589 72-62 -> 79295897262,
-	password VARCHAR(25) NOT NULL,
+	password VARCHAR(64) NOT NULL,
 	user_type VARCHAR(7) CONSTRAINT user_type_restriction CHECK(user_type IN ('student', 'teacher'))
 );
 
