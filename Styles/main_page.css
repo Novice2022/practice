@@ -22,7 +22,7 @@ header button:hover {
 }
 
 header h1 {
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 .content {
@@ -34,19 +34,98 @@ header h1 {
 .task {
     grid-column: 2;
     padding: 15px 20px 15px 20px;
-    display: flex;
-    justify-self: center;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 18fr 2fr 3fr 3fr;
+    gap: 20px;
     margin-bottom: 20px;
-    justify-content: space-between;
+    border-radius: 20px;
+    border-radius: 1000px;
 }
 
 .task .left-content {
-    justify-self: flex-start;
-    display: flex;
-    justify-content: flex-start;
+    grid-column: 1;
+    align-self: center;
+}
+
+.task .first-middle-content {
+    grid-column: 2;
+    align-self: center;
+}
+
+.task .second-middle-content {
+    grid-column: 3;
+    align-self: center;
 }
 
 .task .right-content {
-    justify-self: flex-end;
+    grid-column: 4;
+    align-self: center;
+}
+
+.task input {
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+.task input::-webkit-input-placeholder {
+    color: rgb(201, 201, 201);
+    font-size: 15px;
+}
+
+.left-content input {
+    padding: 0 10px 0 10px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    font-weight: 300;
+    background: none;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.separator {
+    grid-column: 2;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    height: 1px;
+    margin-bottom: 60px;
+}
+
+.loaded-task {
+    grid-column: 2;
+    padding: 15px 20px 15px 20px;
+    display: grid;
+    grid-template-columns: 1fr 30px auto auto auto;
+    gap: 20px;
+    margin-bottom: 20px;
+    border-radius: 1000px;
+    align-content: center;
+}
+
+.task-text {
+    grid-column: 1;
+}
+
+.left-time-text {
+    grid-column: 3;
+}
+
+.left-time-value {
+    grid-column: 4;
+    text-align: end;
+}
+
+.loaded-task i {
+    color: white;
+    align-self: center;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+p {
+    color: white;
+}
+
+.send {
+    align-self: center;
+    grid-column: 6;
 }

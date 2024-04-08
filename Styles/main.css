@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../Images/background.jpg');
+    background-image: url('../Images/background-1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -49,7 +49,7 @@ form {
     color: white;
 }
 
-.form-input {
+input {
     padding: 0 10px 0 10px;
     font-size: 18px;
     outline: none;
@@ -62,25 +62,27 @@ form {
     letter-spacing: 1px;
 }
 
-.form-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
     color: rgb(201, 201, 201);
     font-size: 15px;
 }
 
-.form-button {
-    color: white;
+button {
+    color: rgba(255, 255, 255, 0.5);
     background: none;
     border-radius: 1000px;
     height: 30px;
     border: none;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 18px;
-    transition: 200ms;
+    padding: 0 30px 0 30px;
+    text-align: center;
+    transition: 100ms;
 }
 
-.form-button:hover {
-    font-weight: 700;
-    letter-spacing: 2px;
+button:hover {
+    border-color: white;
+    color: white;
 }
 
 .transparent-button {
@@ -88,4 +90,11 @@ form {
     border: none;
     height: 30px;
     background: none;
+}
+
+.interface-button {
+    border: none;
+    padding: 0;
+    justify-self: flex-start;
+    align-self: center;
 }

@@ -1,4 +1,4 @@
-CREATE TABLE customer (
+CREATE TABLE IF NOT EXISTS customer (
 	id VARCHAR(7) PRIMARY KEY,  -- random chars like ({char * 3}-{char * 3}). Ex: Av3-nD7
 	name VARCHAR(20) NOT NULL,
 	surname VARCHAR(20) NOT NULL,
@@ -7,10 +7,12 @@ CREATE TABLE customer (
 	user_type VARCHAR(7) CONSTRAINT user_type_restriction CHECK(user_type IN ('student', 'teacher'))
 );
 
-CREATE TABLE task (
+CREATE TABLE IF NOT EXISTS task (
 	content TEXT NOT NULL,
 	student_id VARCHAR(7) REFERENCES customer (id) ON DELETE CASCADE,
 	teacher_id VARCHAR(7) REFERENCES customer (id) ON DELETE CASCADE,
+	creating_datetime TIMESTAMP DEFAULT NOW(),
+	deadline_datetime TIMESTAMP NOT NULL,
 	status BOOL DEFAULT false,  -- false = in work | true = accepted
 	mark SMALLINT CONSTRAINT mark_restriction CHECK(mark BETWEEN 2 AND 5)
 );
@@ -38,6 +40,8 @@ INSERT INTO task VALUES
 		'Study Docker',
 		'Dl9-8Fn',
 		'fng-8fM',
+		NOW(),
+		'13.04.2024 14:00:00',
 		false,
 		NULL
 	),
@@ -45,6 +49,8 @@ INSERT INTO task VALUES
 		'Study Git',
 		'Dl9-8Fn',
 		'fng-8fM',
+		NOW(),
+		'13.04.2024 14:30:00',
 		true,
 		4
 	);
