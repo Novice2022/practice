@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="../Styles/registration.css">
 		<title>Registration</title>
 	</head>
-	<body id="registration">
-		<form id="form" action="" method="post">
+	<body class="registration">
+		<form class="blured-container white-thin-border" id="form" method="post">
             <div class="form-header">
                 <button type="submit">
                     <i class='bx bx-chevron-left'></i>
@@ -29,6 +29,14 @@
 			<input class="form-input" type="email" name="email" id="email-input" placeholder="Email">
 			<input class="form-input" type="password" name="password" id="password-input" placeholder="Password">
             <input class="form-input" type="password" name="repeat-password" id="repeat-password-input" placeholder="Repeat password">
+			
+			<div class="role-selector">
+				<p>Register as: </p>
+				<select name="role" id="role-selector">
+					<option selected>Student</option>
+					<option>Teacher</option>
+				</select>
+			</div>
 
 			<div class="free_space"></div>
 

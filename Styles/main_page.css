@@ -3,22 +3,50 @@ header {
     flex-direction: row;
     justify-content: space-between;
     padding: 0 120px 0 120px;
-    background: linear-gradient(90deg, #5493CC, #8FF7D2);
+    margin-bottom: 60px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 header button {
     align-self: center;
     font-size: 22px;
-    color: rgb(57, 57, 57);
+    color: rgb(192, 192, 192);
     transition: 200ms;
 }
 
 header button:hover {
     letter-spacing: 2px;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: 500;
 }
 
 header h1 {
-    color: white;
+    color: rgb(0, 0, 0);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
+    column-gap: 15px;
+}
+
+.task {
+    grid-column: 2;
+    padding: 15px 20px 15px 20px;
+    display: flex;
+    justify-self: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.task .left-content {
+    justify-self: flex-start;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.task .right-content {
+    justify-self: flex-end;
 }

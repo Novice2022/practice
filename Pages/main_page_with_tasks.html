@@ -4,6 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
@@ -12,10 +14,23 @@
         <link rel="stylesheet" href="../Styles/main_page.css">
 		<title>Content</title>
 	</head>
-    <header>
-        <h1>My tasks</h1>
-        <button class="transparent-button" id="aboutme-link">Username</button>
-    </header>
+	
 	<body id="main-page">
+		<header class="blured-container">
+			<h1>My tasks</h1>
+			<button class="transparent-button" id="aboutme-link">Username</button>
+		</header>
+		<div class="content">
+			<div class="task add-task blured-container white-thin-border">
+				<div class="left-content">
+					<input type="text" name="task-content" id="task-content-input" placeholder="New task">
+					<i class='bx bx-alarm'></i>
+					<input type="time" name="task-time" id="task-time-input">
+				</div>
+
+				<button class="right-content">Add</button>
+			</div>
+
+		</div>
 	</body>
 </html>
