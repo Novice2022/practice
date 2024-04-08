@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: "Tilt Neon", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#authorisation, #registration {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+
+.free_space {
+    height: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 25px;
+    padding-bottom: 15px;
+    border-radius: 25px;
+    align-content: space-between;
+}
+
+.form-h1 {
+    font-weight: 900;
+    text-align: center;
+}
+
+.form-input {
+    padding: 0 10px 0 10px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
+    font-weight: 600;
+}
+
+.form-button {
+    color: white;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    height: 40px;
+    outline: none;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #5493CC, #8FF7D2);
+    transition: 200ms;
+}
+
+.form-button:hover {
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.transparent-button {
+    outline: none;
+    border: none;
+    height: 30px;
+    background: none;
+}

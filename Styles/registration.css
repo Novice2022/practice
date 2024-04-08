@@ -1,0 +1,22 @@
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form-header button {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.form-header i {
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: 20px;
+}

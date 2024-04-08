@@ -4,25 +4,34 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="../Styles/main.css">
-		<title>Authorisation</title>
+        <link rel="stylesheet" href="../Styles/registration.css">
+		<title>Registration</title>
 	</head>
-	<body id="authorisation">
+	<body id="registration">
 		<form id="form" action="" method="post">
-			<h1 class="form-h1">Welcome</h1>
+            <div class="form-header">
+                <button type="submit">
+                    <i class='bx bx-chevron-left'></i>
+                </button>
+                <h1 class="form-h1">Create account</h1>
+            </div>
 
 			<div class="free_space"></div>
 			
+            <input class="form-input" type="text" name="username" id="username-input" placeholder="Username">
 			<input class="form-input" type="email" name="email" id="email-input" placeholder="Email">
 			<input class="form-input" type="password" name="password" id="password-input" placeholder="Password">
+            <input class="form-input" type="password" name="repeat-password" id="repeat-password-input" placeholder="Repeat password">
 
 			<div class="free_space"></div>
 
-			<button class="form-button" type="submit">Login</button>
 			<button class="form-button">Sign Up</button>
 		</form>
 	</body>
