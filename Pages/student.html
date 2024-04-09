@@ -8,7 +8,7 @@
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap">
 
 		<link rel="stylesheet" href="../Styles/main.css">
 		<link rel="stylesheet" href="../Styles/main_page.css">
@@ -20,19 +20,10 @@
 			<h1>My tasks</h1>
 			<button class="transparent-button" id="aboutme-link">Username</button>
 		</header>
-		<div class="content">
-			<div class="task blured-container white-thin-border">
-				<input  class="left-content" name="task-content" id="task-content-input" placeholder="New task">
-				<input  class="first-middle-content" name="task-time" id="task-time-input" type="time">
-				<input  class="second-middle-content" name="task-date" id="date" type="date">
-				<button class="right-content white-thin-border">Add</button>
-			</div>
-
-			<div class="separator"></div>
-			
+		<div class="content">			
 			<!-- Dynamic loading content -->
 	
-			<div class="task loaded-task blured-container white-thin-border">
+			<div class="task loaded-task student-side blured-container white-thin-border">
 				<p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<p class="left-time-text">Left time:</p>
 				<p class="left-time-value">58:24:07 01</p>  <!-- left time value -->
@@ -53,12 +44,12 @@
 				<button class="send white-thin-border">Send</button>
 			</div>
 
-			<div class="task loaded-task blured-container white-thin-border">  <!-- same dynamic loaded content -->
+			<div class="task loaded-task student-side blured-container white-thin-border">  <!-- same dynamic loaded content -->
 				<p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<p class="left-time-text">Left time:</p>
 				<p class="left-time-value">14:09:00 00</p>
-				<i class='bx bx-shocked' ></i>
-				<button class="send white-thin-border">Send</button>
+				<i class='bx bx-shocked'></i>
+				<button class="task-action white-thin-border">Send</button>
 			</div>
 	
 			<!-- Dynamic loading content -->

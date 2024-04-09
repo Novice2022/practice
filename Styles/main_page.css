@@ -35,7 +35,6 @@ header h1 {
     grid-column: 2;
     padding: 15px 20px 15px 20px;
     display: grid;
-    grid-template-columns: 18fr 2fr 3fr 3fr;
     gap: 20px;
     margin-bottom: 20px;
     border-radius: 20px;
@@ -63,12 +62,25 @@ header h1 {
 }
 
 .task input {
-    border-bottom: 1px solid rgb(128, 128, 128);
+    align-items: center;
+    align-content: center;
+    /* border-bottom: 1px solid rgb(128, 128, 128); */
+    border-width: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .task input::-webkit-input-placeholder {
     color: rgb(201, 201, 201);
     font-size: 15px;
+}
+
+.task-creator {
+    grid-template-columns: 18fr 2fr 3fr auto;
+}
+
+#task-content-input {
+    text-align: center;
 }
 
 .left-content input {
@@ -94,11 +106,19 @@ header h1 {
     grid-column: 2;
     padding: 15px 20px 15px 20px;
     display: grid;
-    grid-template-columns: 1fr 30px auto auto auto;
     gap: 20px;
     margin-bottom: 20px;
     border-radius: 1000px;
     align-content: center;
+}
+
+.student-side {
+    grid-template-columns: 18fr auto 2fr 3fr 3fr;
+}
+
+.teacher-side {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
 }
 
 .task-text {
@@ -111,13 +131,13 @@ header h1 {
 
 .left-time-value {
     grid-column: 4;
-    text-align: end;
+    text-align: start;
 }
 
 .loaded-task i {
     color: white;
     align-self: center;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 100;
 }
 
@@ -125,7 +145,19 @@ p {
     color: white;
 }
 
-.send {
+.task-action {
     align-self: center;
     grid-column: 6;
+}
+
+.more-link {
+    grid-column: 2;
+    align-self: center;
+    outline: none;
+    color: white;
+    text-decoration: none;
+}
+
+.teacher-task-action {
+    grid-column: 3;
 }

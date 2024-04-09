@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap">
+
+		<link rel="stylesheet" href="../Styles/main.css">
+		<link rel="stylesheet" href="../Styles/main_page.css">
+		<title>Content</title>
+	</head>
+	
+	<body id="main-page">
+		<header class="blured-container">
+			<h1>My tasks</h1>
+			<button class="transparent-button" id="aboutme-link">Username</button>
+		</header>
+		<div class="content">
+			<form action="get" class="task task-creator blured-container white-thin-border">
+				<input  class="left-content" name="task-content" id="task-content-input" placeholder="Enter new task content here...">
+				<input  class="first-middle-content" name="task-time" id="task-time-input" type="time">
+				<input  class="second-middle-content" name="task-date" id="date" type="date">
+				<button class="right-content white-thin-border">Add</button>
+			</form>
+
+			<div class="separator"></div>
+			
+            <!-- Dynamic loading content -->
+	
+			<form action="get" class="task loaded-task teacher-side blured-container white-thin-border">
+				<p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a class="more-link" href="about_task.html">Watch more</a>
+				<button class="tacher-task-action task-action white-thin-border">Accept</button>
+			</form>
+	
+			<!-- Dynamic loading content -->
+		</div>
+	</body>
+</html>
