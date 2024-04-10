@@ -113,7 +113,7 @@ header h1 {
 }
 
 .student-side {
-    grid-template-columns: 18fr auto 2fr 3fr 3fr;
+    grid-template-columns: 18fr auto 2fr 3fr 3fr auto;
 }
 
 .teacher-side {
@@ -126,11 +126,13 @@ header h1 {
 }
 
 .left-time-text {
+    align-self: center;
     grid-column: 3;
 }
 
 .left-time-value {
     grid-column: 4;
+    align-self: center;
     text-align: start;
 }
 
@@ -139,6 +141,7 @@ header h1 {
     align-self: center;
     font-size: 30px;
     font-weight: 100;
+    grid-column: 5;
 }
 
 p {
