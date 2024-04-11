@@ -28,17 +28,20 @@ header h1 {
 .content {
     display: grid;
     grid-template-columns: 1fr 7fr 1fr;
-    column-gap: 15px;
+    row-gap: 25px;
 }
+
+/* .student-side, .teacher-side, .task-creator {
+    border-radius: 20px;
+} */
 
 .task {
     grid-column: 2;
-    padding: 15px 20px 15px 20px;
+    padding: 0;
     display: grid;
-    gap: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    border-radius: 1000px;
+    column-gap: 20px;
+    align-content: center;
+    width: 7fr;
 }
 
 .task .left-content {
@@ -64,7 +67,6 @@ header h1 {
 .task input {
     align-items: center;
     align-content: center;
-    /* border-bottom: 1px solid rgb(128, 128, 128); */
     border-width: 0;
     padding: 0;
     margin: 0;
@@ -76,19 +78,24 @@ header h1 {
 }
 
 .task-creator {
-    grid-template-columns: 18fr 2fr 3fr auto;
+    display: grid;
+    grid-template-rows: auto;
+    padding: 15px;
+    row-gap: 15px;
 }
 
-#task-content-input {
-    text-align: center;
+.upper-panel {
+    display: grid;
+    grid-template-columns: 18fr 2fr 3fr auto;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+    padding-bottom: 15px;
+    column-gap: 15px;
 }
 
 .left-content input {
-    padding: 0 10px 0 10px;
     font-size: 18px;
     outline: none;
     border: none;
-    margin-bottom: 10px;
     font-weight: 300;
     background: none;
     color: white;
@@ -99,39 +106,50 @@ header h1 {
     grid-column: 2;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     height: 1px;
+}
+
+.margin-bottom-60px {
     margin-bottom: 60px;
+}
+
+.margin-bottom-20px {
+    margin-bottom: 20px;
 }
 
 .loaded-task {
     grid-column: 2;
-    padding: 15px 20px 15px 20px;
     display: grid;
-    gap: 20px;
-    margin-bottom: 20px;
-    border-radius: 1000px;
+    grid-column-gap: 20px;
     align-content: center;
+    border-width: 2px;
+    padding: 0 15px;
+}
+
+.loaded-task:hover {
+    border-color: rgb(157, 162, 255);
 }
 
 .student-side {
-    grid-template-columns: 18fr auto 2fr 3fr 3fr auto;
+    grid-template-columns: 1fr repeat(3, auto);
 }
 
 .teacher-side {
-    display: grid;
     grid-template-columns: 1fr auto auto;
 }
 
 .task-text {
     grid-column: 1;
+    align-self: center;
 }
 
 .left-time-text {
     align-self: center;
-    grid-column: 3;
+    grid-column: 2;
+    width: fit-content;
 }
 
 .left-time-value {
-    grid-column: 4;
+    grid-column: 3;
     align-self: center;
     text-align: start;
 }
@@ -141,7 +159,8 @@ header h1 {
     align-self: center;
     font-size: 30px;
     font-weight: 100;
-    grid-column: 5;
+    grid-column: 4;
+    width: fit-content;
 }
 
 p {
@@ -150,7 +169,6 @@ p {
 
 .task-action {
     align-self: center;
-    grid-column: 6;
 }
 
 .more-link {
@@ -163,4 +181,10 @@ p {
 
 .teacher-task-action {
     grid-column: 3;
+}
+
+.content a {
+    display: block;
+    text-decoration: none;
+    outline: none;
 }

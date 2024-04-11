@@ -3,8 +3,6 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +11,7 @@
 		<link rel="stylesheet" href="../Styles/main.css">
 		<link rel="stylesheet" href="../Styles/main_page.css">
 		<link rel="shortcut icon" href="../Images/white-shortcut.ico">
+
 		<title>Teacher content</title>
 	</head>
 	
@@ -22,24 +21,36 @@
 			<button class="transparent-button" id="aboutme-link">Username</button>
 		</header>
 		<div class="content">
-			<form action="get" class="task task-creator blured-container white-thin-border">
-				<input  class="left-content" name="task-content" id="task-content-input" placeholder="Enter new task content here...">
-				<input  class="first-middle-content" name="task-time" id="task-time-input" type="time">
-				<input  class="second-middle-content" name="task-date" id="date" type="date">
-				<button class="right-content white-thin-border">Add</button>
+			<form action="get" class="task">
+				<div class="task-creator blured-container white-border">
+					<div class="upper-panel">
+						<input  class="left-content" name="task-content" id="task-content-input" placeholder="Short description... (default: Task)">
+						<input  class="first-middle-content" name="task-time" id="task-time-input" type="time">
+						<input  class="second-middle-content" name="task-date" id="date" type="date">
+						<button class="right-content white-border">Create</button>
+					</div>
+
+					<div class="lower-panel" style="color: white;">
+						File receiver coming soon...
+					</div>
+				</div>
+
 			</form>
 
-			<div class="separator"></div>
+			<div class="separator margin-bottom-60px"></div>
 			
             <!-- Dynamic loading content -->
 	
-			<form action="get" class="task loaded-task teacher-side blured-container white-thin-border">
-				<p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <a class="more-link" href="about_task.html">Watch more</a>
-				<button class="tacher-task-action task-action white-thin-border">Accept</button>
-			</form>
-	
+			<a class="task" href="about_task.html">
+				<div class="loaded-task teacher-side blured-container white-border">  <!-- same dynamic loaded content -->
+					<p class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam doloribus aperiam sunt deleniti hic amet maiores quasi, alias excepturi, debitis, tenetur beatae labore distinctio tempore ipsam animi perspiciatis inventore nihil.</p>
+					<p class="left-time-text">Send time:</p>
+					<p class="left-time-value">10:08:57 02</p>
+				</div>
+			</a>
+
 			<!-- Dynamic loading content -->
+
 		</div>
 	</body>
 </html>
