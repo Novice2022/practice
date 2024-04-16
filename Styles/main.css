@@ -13,6 +13,10 @@ body {
     font-style: normal;
 }
 
+*::selection {
+    background-color: rgba(0, 0, 0, 0.287)
+}
+
 .authorisation, .registration {
     position: absolute;
     left: 50%;
@@ -99,4 +103,13 @@ button:hover {
     padding: 0;
     justify-self: flex-start;
     align-self: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
