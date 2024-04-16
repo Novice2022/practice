@@ -5,13 +5,15 @@ var log_div = document.getElementById('info')
 
 var custom_files = []
 
+var button_hover = false
+
 
 // ================================== functions ==================================
 
-function draw_files() {
-	console.log('draw_files')
+clear_log_div = () => log_div.innerHTML = ''
 
-	log_div.innerHTML = ''
+draw_files = () => {
+	console.log('draw_files')
 	
 	for (let i = 0; i < file_receiver.files.length; i++) {
 		let file = file_receiver.files[i]
@@ -26,7 +28,7 @@ function draw_files() {
 	console.log("file_receiver.files: ", file_receiver.files)
 }
 
-function set_files_to_input(custom_files) {
+set_files_to_input = (custom_files) => {
 	console.log('set_files_to_input')
 
 	let new_file_list = {}
@@ -39,7 +41,9 @@ function set_files_to_input(custom_files) {
 	console.log(new_file_list)
 }
 
-function update_file_receiver() {
+update_file_receiver = () => {
+	clear_log_div()
+
 	new_file_receiver = document.createElement('input');
 
 	new_file_receiver.type = 'file';
@@ -53,9 +57,72 @@ function update_file_receiver() {
 	file_receiver.remove()
 
 	file_receiver = document.getElementById('new-file-receiver')
+	file_receiver.addEventListener('change', () => draw_files())
 	file_receiver.id = 'file-receiver'
+}
+
+drop_realisation = (e) => {
+	choose_file_button.style.display = "block"
+	
+	update_file_receiver()
+	e.preventDefault()
+	
+	let files = e.dataTransfer.files
+	let custom_files = Array.from(files)
+
+	let custom_file_list = Object.create(FileList.prototype)
+
+	custom_files.forEach(function(file, index) {
+		Object.defineProperty(custom_file_list, index, {
+			value: file,
+			writable: false
+		})
+	})
+
+	Object.defineProperty(custom_file_list, 'length', {
+		value: custom_files.length,
+		writable: false
+	})
+
+	Object.defineProperty(file_receiver, 'files', {
+		value: custom_file_list,
+		writable: false
+	})
+
+	console.log('Files added to custom FileList:', custom_files)
 
 	draw_files()
+}
+
+
+// ==================================== styles ====================================
+
+drop_zone_mouseover = () => {
+	if (!button_hover) {
+		drop_zone.style.borderColor = "rgba(255, 255, 255, 0.6)"
+		choose_file_button.style.borderColor = "rgba(255, 255, 255, 0.6)"
+		choose_file_button.style.color = "rgba(255, 255, 255, 0.8)"
+	}
+}
+
+drop_zone_mouseleave = () => {
+	drop_zone.style.borderColor = "rgba(255, 255, 255, 0.25)"
+	choose_file_button.style.borderColor = "rgba(255, 255, 255, 0.25)"
+	choose_file_button.style.color = "rgba(255, 255, 255, 0.6)"
+}
+
+choose_file_button_mouseover = () => {
+	drop_zone.style.borderColor = "rgba(255, 255, 255, 0.25)"
+	choose_file_button.style.borderColor = "rgba(255, 255, 255, 0.25)"
+	choose_file_button.style.color = "rgb(255, 255, 255)"
+	button_hover = true
+}
+
+choose_file_button_mouseleave = () => {
+	drop_zone.style.borderColor = "rgba(255, 255, 255, 0.6)"
+	choose_file_button.style.borderColor = "rgba(255, 255, 255, 0.6)"
+	choose_file_button.style.color = "rgba(255, 255, 255, 0.6)"
+	button_hover = false
 }
 
 
@@ -72,52 +139,43 @@ choose_file_button.addEventListener(
 drop_zone.addEventListener(
 	'dragover',
 	(e) => {
+		choose_file_button.style.display = "none"
+		drop_zone_mouseover()
+
 		if (e.target === drop_zone)
 			e.preventDefault()
 	}
-);
+)
 
-// drop_zone.addEventListener(
-//     'drop',
-//     (e) => {
-//         e.preventDefault()
-//         set_files_to_input(e.dataTransfer.files)
-//         draw_files()
-//     }
-// );
+drop_zone.addEventListener(
+	'dragleave',
+	(e) => {
+		choose_file_button.style.display = "block"
+		drop_zone_mouseleave()
+	}
+)
 
 drop_zone.addEventListener(
 	'drop',
-	(e) => {
-		update_file_receiver()
-		e.preventDefault()
-		
-		let files = e.dataTransfer.files
-		let custom_files = Array.from(files)
+	(e) => drop_realisation(e)
+)
 
-		let custom_file_list = Object.create(FileList.prototype)
+drop_zone.addEventListener(
+	'mouseover',
+	() => drop_zone_mouseover()
+)
 
-		custom_files.forEach(function(file, index) {
-			Object.defineProperty(custom_file_list, index, {
-				value: file,
-				writable: false
-			})
-		})
+drop_zone.addEventListener(
+	'mouseleave',
+	() => drop_zone_mouseleave()
+)
 
-		Object.defineProperty(custom_file_list, 'length', {
-			value: custom_files.length,
-			writable: false
-		})
+choose_file_button.addEventListener(
+	'mouseover',
+	() => choose_file_button_mouseover()
+)
 
-		Object.defineProperty(file_receiver, 'files', {
-			value: custom_file_list,
-			writable: false
-		})
-
-		console.log('Files added to custom FileList:', custom_files)
-
-		draw_files()
-	}
-);
-
-file_receiver.addEventListener('change', () => {draw_files()})
+choose_file_button.addEventListener(
+	'mouseleave',
+	() => choose_file_button_mouseleave()
+)
