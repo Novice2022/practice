@@ -179,3 +179,8 @@ choose_file_button.addEventListener(
 	'mouseleave',
 	() => choose_file_button_mouseleave()
 )
+
+file_receiver.addEventListener(
+	'change',
+	() => draw_files()
+)

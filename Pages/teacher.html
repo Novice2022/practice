@@ -21,11 +21,11 @@
 			<button class="transparent-button" id="aboutme-link">Username</button>
 		</header>
 		<div class="content">
-			<form action="#" method="get" class="task">
+			<form action="#" method="post" class="task">
 				<div class="task-creator blured-container white-border">
 					<div class="upper-panel">
 						<input class="left-content" name="task-content" placeholder="Short description... (default: Task)">
-						<input class="id-input" placeholder="Student id..." type="text">
+						<input class="id-input" name="student-id" placeholder="Student id..." type="text">
 						<input class="first-middle-content" name="task-time" type="time">
 						<input class="second-middle-content" name="task-date" type="date">
 						<button class="right-content white-border">Create</button>
@@ -33,7 +33,7 @@
 					
 					<div id="drop-zone" class="white-border">
 						<input type="file" name="files" id="file-receiver" multiple style="display: none;">
-						<button id="choose-file-button" type="submit">Click to choose file or drop into this area (Every action will clear recently pinned files)</button>
+						<button id="choose-file-button" type="button">Click to choose file or drop into this area (Every action will clear recently pinned files)</button>
 					</div>
 					
 					<div id="info">
