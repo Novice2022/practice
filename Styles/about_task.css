@@ -1,1 +1,59 @@
+* {
+	color: white;
+	margin: 0;
+	padding: 0;
+}
 
+.go_back_link {
+	padding: 15px;
+}
+
+#go_back {
+	color: rgba(255, 255, 255, 0.6);
+	text-decoration: none;
+	outline: none;
+	align-self: center;
+	font-size: 40px;
+	transition: 150ms;
+}
+
+#go_back:hover {
+	color: white;
+}
+
+.card {
+	padding: 15px;
+	grid-column: 2;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	row-gap: 15px;
+}
+
+.first_row {
+	grid-row: 1;
+	display: grid;
+	grid-template-columns: 1fr auto;
+}
+
+.middle_row {
+	grid-row: 2;
+	display: grid;
+}
+
+.last_row {
+	grid-row: 3;
+	display: grid;
+}
+
+.first_row h3 {
+	grid-column: 1;
+}
+
+.first_row p {
+	grid-column: 2;
+}
+
+.middle_row a {
+	padding-left: 15px;
+	color: rgba(255, 255, 255, 0.8);
+}

@@ -25,13 +25,6 @@ header h1 {
     color: white;
 }
 
-.content {
-    display: grid;
-    grid-template-columns: 1fr 7fr 1fr;
-    row-gap: 25px;
-    padding-bottom: 80px;
-}
-
 .task {
     grid-column: 2;
     padding: 0;
@@ -105,17 +98,9 @@ header h1 {
 }
 
 .separator {
-    grid-column: 3;
+    grid-column: 2;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     height: 1px;
-}
-
-.margin-bottom-60px {
-    margin-bottom: 60px;
-}
-
-.margin-bottom-20px {
-    margin-bottom: 20px;
 }
 
 .loaded-task {
