@@ -1,0 +1,95 @@
+.go_back_link {
+	padding: 15px;
+}
+
+#go_back {
+	text-decoration: none;
+	outline: none;
+	align-self: center;
+	font-size: 40px;
+	transition: 150ms;
+}
+
+#go_back:hover {
+	color: white;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    margin: 0;
+}
+
+.left, .right {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 25px;
+}
+
+.card {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 30px 1fr;
+    grid-template-rows: 1px 1fr 1px;
+    padding: 15px;
+}
+
+.vertical-separator {
+    justify-self: center;
+    grid-column: 2;
+    grid-row: 2;
+    border-width: 0;
+    border-right: 1px dashed rgba(255, 255, 255, 0.25);
+}
+
+.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.left p {
+    margin-bottom: 5px;
+}
+
+.left h3, .right h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.top {
+    grid-row: 1;
+    display: grid;
+}
+
+.left button .right button {
+    grid-row: 2;
+    align-content: end;
+}
+
+input {
+    border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+#send-password {
+    padding: 0;
+    text-align: left;
+}
+
+.left a {
+    color: rgba(255, 0, 0, .9);
+    text-decoration: none;
+    outline: none;
+    align-self: end;
+    justify-self: center;
+    font-size: 18px;
+}

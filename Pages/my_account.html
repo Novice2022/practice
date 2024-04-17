@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap">
+
+        <link rel="stylesheet" href="../Styles/main.css">
+        <link rel="stylesheet" href="../Styles/my_account.css">
+        <link rel="shortcut icon" href="../Images/white-shortcut.ico">
+
+        <title>Account</title>
+    </head>
+    <body>
+        <div class="go_back_link">
+			<!-- <a id="go_back" href="teacher.html">
+				<i class='bx bx-chevron-left'></i>
+			</a> OR -->
+			<a id="go_back" href="teacher.html">
+				<i class='bx bx-chevron-left'></i>
+			</a>
+		</div>
+		
+        <div class="content">
+			<div class="card white-border blured-container">
+				<div class="left">
+                    <div class="top">
+                        <h3>About me</h3>
+                        <p class="name">Name</p>
+                        <p class="email">test@mail.com</p>
+                        <p class="role">Student / Teacher</p>
+                        <p class="id">ID:</p>
+                        <button id="send-password" type="button" onclick="alert('Check Your password in <email>')">Get password (user's email with this brackets)</button>
+                    </div>
+                    <a href="authorisation.html">Log out</a>
+                </div>
+
+                <div class="vertical-separator"></div>
+                
+                <form class="right" action="#" method="post">
+                    <div class="top">
+                        <h3>Edit account data</h3>
+                        <input type="text" name="username" id="username-input" placeholder="Username">
+                        <input type="email" name="email" id="email-input" placeholder="Email">
+                        <input type="password" name="password" id="password-input" placeholder="Password">
+                        <input type="password" name="repeat-password" id="repeat-password-input" placeholder="Repeat password">                 
+                    </div>
+                    <button type="submit">Apply</button>
+                </form>
+			</div>
+		</div>
+    </body>
+</html>
