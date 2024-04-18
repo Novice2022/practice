@@ -111,13 +111,6 @@ button:hover {
     color: white;
 }
 
-.transparent-button {
-    outline: none;
-    border: none;
-    height: 30px;
-    background: none;
-}
-
 .interface-button {
     border: none;
     padding: 0;

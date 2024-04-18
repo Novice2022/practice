@@ -2,29 +2,33 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 120px 0 120px;
     margin-bottom: 60px;
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 15px 30px;
+    padding: 12px 65px;
 }
 
-header button {
-    align-self: center;
-    font-size: 22px;
-    color: rgb(192, 192, 192);
-    transition: 200ms;
-    padding: 0;
+.transparent-link {
+    outline: none;
+    border: none;
+    height: 30px;
+    background: none;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    outline: none;
+    text-decoration: none;
+    transition: 150ms;
+    align-self: center; 
 }
 
-header button:hover {
-    letter-spacing: 2px;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
+.transparent-link:hover {
+    letter-spacing: 1px;
+    color: white;
 }
 
 header h1 {
     color: white;
+    font-size: 24px;
 }
 
 .task {
@@ -227,6 +231,7 @@ p {
     display: grid;
     padding: 5px 10px;
     grid-template-columns: auto 20px auto;   
+    transition: 150ms;
 }
 
 #choose-file-button {

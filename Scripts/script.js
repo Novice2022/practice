@@ -68,7 +68,7 @@ update_file_receiver = () => {
 }
 
 drop_realisation = (e) => {
-	choose_file_button.style.display = "block"
+	drop_zone_buttons_container.style.display = "grid"
 	
 	update_file_receiver()
 	e.preventDefault()
@@ -145,7 +145,7 @@ choose_file_button.addEventListener(
 drop_zone.addEventListener(
 	'dragover',
 	(e) => {
-		choose_file_button.style.display = "none"
+		drop_zone_buttons_container.style.display = "none"
 		drop_zone_mouseover()
 
 		if (e.target === drop_zone)
@@ -156,7 +156,7 @@ drop_zone.addEventListener(
 drop_zone.addEventListener(
 	'dragleave',
 	(e) => {
-		choose_file_button.style.display = "block"
+		drop_zone_buttons_container.style.display = "grid"
 		drop_zone_mouseleave()
 	}
 )
