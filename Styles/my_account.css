@@ -31,20 +31,16 @@
     row-gap: 25px;
 }
 
+.vertical-separator {
+    grid-row: 2;
+}
+
 .card {
     grid-column: 2;
     display: grid;
     grid-template-columns: 1fr 30px 1fr;
     grid-template-rows: 1px 1fr 1px;
     padding: 15px;
-}
-
-.vertical-separator {
-    justify-self: center;
-    grid-column: 2;
-    grid-row: 2;
-    border-width: 0;
-    border-right: 1px dashed rgba(255, 255, 255, 0.25);
 }
 
 .left {
@@ -86,7 +82,7 @@ input {
 }
 
 .left a {
-    color: rgba(255, 0, 0, .9);
+    color: rgba(255, 79, 79, 0.9);
     text-decoration: none;
     outline: none;
     align-self: end;

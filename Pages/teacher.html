@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,10 +35,18 @@
 					
 					<div id="drop-zone" class="white-border">
 						<input type="file" name="files" id="file-receiver" multiple style="display: none;">
-						<button id="choose-file-button" type="button">Click to choose file or drop into this area (Every action will clear recently pinned files)</button>
+
+						<div id="choose-file-or-clean-input">
+							<button id="choose-file-button" type="button"><i id="button" class='bx bx-folder-open' ></i></button>
+							
+							<div id="separator" class="vertical-separator"></div>
+							
+							<button id="clear-button" type="button"><i id="button" class='bx bx-trash' ></i></button>
+						</div>
 					</div>
 					
 					<div id="info">
+						<p id="info-header">Pinned files:</p>
 						
 					</div>
 				</div>

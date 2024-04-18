@@ -1,19 +1,25 @@
 var drop_zone = document.getElementById('drop-zone')
+
+var drop_zone_buttons_container = document.getElementById('choose-file-or-clean-input')
 var choose_file_button = document.getElementById('choose-file-button')
+var clear_files = document.getElementById('clear-button')
+
 var file_receiver = document.getElementById('file-receiver')
 var log_div = document.getElementById('info')
 
 var custom_files = []
 
-var button_hover = false
+var drop_zone_buttons_container_hover = false
 
 
 // ================================== functions ==================================
 
-clear_log_div = () => log_div.innerHTML = ''
+clear_log_div = () => log_div.innerHTML = '<p>Pinned files:</p>'
 
 draw_files = () => {
 	console.log('draw_files')
+
+	log_div.appendChild(document.createElement('br'))
 	
 	for (let i = 0; i < file_receiver.files.length; i++) {
 		let file = file_receiver.files[i]
@@ -98,31 +104,31 @@ drop_realisation = (e) => {
 // ==================================== styles ====================================
 
 drop_zone_mouseover = () => {
-	if (!button_hover) {
+	if (!drop_zone_buttons_container_hover) {
 		drop_zone.style.borderColor = "rgba(255, 255, 255, 0.6)"
-		choose_file_button.style.borderColor = "rgba(255, 255, 255, 0.6)"
+		drop_zone_buttons_container.style.borderColor = "rgba(255, 255, 255, 0.6)"
 		choose_file_button.style.color = "rgba(255, 255, 255, 0.8)"
+		clear_files.style.color = "rgba(255, 255, 255, 0.8)"
 	}
 }
 
 drop_zone_mouseleave = () => {
 	drop_zone.style.borderColor = "rgba(255, 255, 255, 0.25)"
-	choose_file_button.style.borderColor = "rgba(255, 255, 255, 0.25)"
+	drop_zone_buttons_container.style.borderColor = "rgba(255, 255, 255, 0.25)"
 	choose_file_button.style.color = "rgba(255, 255, 255, 0.6)"
+	clear_files.style.color = "rgba(255, 255, 255, 0.6)"
 }
 
-choose_file_button_mouseover = () => {
+drop_zone_buttons_container_mouseover = () =>  {
 	drop_zone.style.borderColor = "rgba(255, 255, 255, 0.25)"
-	choose_file_button.style.borderColor = "rgba(255, 255, 255, 0.25)"
-	choose_file_button.style.color = "rgb(255, 255, 255)"
-	button_hover = true
+	drop_zone_buttons_container.style.borderColor = "rgba(255, 255, 255, 0.25)"
+	drop_zone_buttons_container_hover = true
 }
 
-choose_file_button_mouseleave = () => {
+drop_zone_buttons_container_mouseleave = () => {
 	drop_zone.style.borderColor = "rgba(255, 255, 255, 0.6)"
-	choose_file_button.style.borderColor = "rgba(255, 255, 255, 0.6)"
-	choose_file_button.style.color = "rgba(255, 255, 255, 0.6)"
-	button_hover = false
+	drop_zone_buttons_container.style.borderColor = "rgba(255, 255, 255, 0.6)"
+	drop_zone_buttons_container_hover = false
 }
 
 
@@ -170,17 +176,19 @@ drop_zone.addEventListener(
 	() => drop_zone_mouseleave()
 )
 
-choose_file_button.addEventListener(
+drop_zone_buttons_container.addEventListener(
 	'mouseover',
-	() => choose_file_button_mouseover()
+	() => drop_zone_buttons_container_mouseover()
 )
 
-choose_file_button.addEventListener(
+drop_zone_buttons_container.addEventListener(
 	'mouseleave',
-	() => choose_file_button_mouseleave()
+	() => drop_zone_buttons_container_mouseleave()
 )
 
 file_receiver.addEventListener(
 	'change',
 	() => draw_files()
 )
+
+clear_files.addEventListener('click', update_file_receiver)
