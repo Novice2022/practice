@@ -1,0 +1,120 @@
+.card {
+    grid-template-rows: auto 1fr;
+    row-gap: 0;
+}
+
+.repin-files {
+    display: grid;
+    row-gap: 10px;
+    padding: 0;
+}
+
+.repin-files input {
+    border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.top-container {
+    display: grid;
+    row-gap: 15px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+
+#delete, #change {
+    padding: 0;
+    margin: 0;
+}
+
+#delete {
+    grid-column: 1;
+    padding: 0;
+    margin: 0;
+    justify-self: left;
+    color: rgba(255, 79, 79, 0.9);
+}
+
+#delete:hover {
+    color: red;
+}
+
+#change {
+    grid-column: 3;
+    padding: 0;
+    margin: 0;
+    justify-self: right;
+}
+
+.last_row {
+    grid-row: 0;
+	display: none;
+}
+
+.edit-panel {
+    display: grid;
+    grid-template-rows: 1fr 1px auto 1px auto;
+    row-gap: 15px;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: dashed;
+}
+
+.sender-id {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.files {
+    grid-row: 2;
+}
+
+#edit-button {
+    grid-row: 2;
+    grid-column: 2;
+    text-align: end;
+    align-self: end;
+    font-size: 24px;
+}
+
+.files {
+	grid-row: 2;
+	display: grid;
+}
+
+.files a {
+	padding-left: 15px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.change-label {
+    grid-row: 1;
+    row-gap: 5px;
+    display: grid;
+}
+
+.edit-panel-separator {
+    grid-row: 2;
+    align-self: center;
+}
+
+.repin-files {
+    grid-row: 3;
+}
+
+#second-edit-panel-separator {
+    grid-row: 4;
+}
+
+.buttons-container {
+    grid-row: 5;
+}
+
+#new-label-input {
+    border-bottom-color: rgba(255, 255, 255, 0.25);
+}

@@ -17,6 +17,7 @@ var drop_zone_buttons_container_hover = false
 clear_log_div = () => log_div.innerHTML = '<p>Pinned files:</p>'
 
 draw_files = () => {
+	clear_log_div()
 	console.log('draw_files')
 
 	log_div.appendChild(document.createElement('br'))

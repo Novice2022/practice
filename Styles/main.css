@@ -29,6 +29,10 @@ i:hover {
 	color: white;
 }
 
+.bx-chevron-left {
+    font-size: 40px;
+}
+
 .authorisation, .registration {
     position: absolute;
     left: 50%;
@@ -58,6 +62,13 @@ i:hover {
     border-width: 0;
     border-right: 1px dashed rgba(255, 255, 255, 0.25);
     height: 100%;
+}
+
+.horizontal-separator {
+    align-self: center;
+    border-width: 0;
+    border-top: 1px dashed rgba(255, 255, 255, 0.25);
+    width: 100%;
 }
 
 form {

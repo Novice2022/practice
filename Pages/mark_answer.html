@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap">
+
+        <link rel="stylesheet" href="../Styles/main.css">
+        <link rel="stylesheet" href="../Styles/about_task.css">
+        <link rel="stylesheet" href="../Styles/mark_answer.css">
+        <link rel="shortcut icon" href="../Images/white-shortcut.ico">
+
+        <title>Mark answer</title>
+    </head>
+    <body>
+		<div id="header" class="go_back_link">
+			<!-- <a id="go_back" href="teacher.html">
+				<i class='bx bx-chevron-left'></i>
+			</a> OR -->
+			<a id="page-go-back" href="teacher.html">
+				<i class='bx bx-chevron-left'></i>
+			</a>
+		</div>
+		
+		<div id="content" class="content">
+			<div class="card white-border blured-container">
+				<div class="first_row">
+					<h3>Task label</h3>
+					<p class="sender_id">From: (Username, #id)</p>
+				</div>
+				<div class="middle_row"> <!-- style="display: none" if no files else style="display: block" -->
+					<p>Pinned files:</p>
+					
+					<!-- Dynamic loading content -->
+					
+					<a href="file_template.txt" download="">Pinned file name</a>
+					
+					<!-- Dynamic loading content -->
+
+				</div>
+
+                <div class="horizontal-separator"></div>
+
+                <div class="create-response">
+                    <input type="button" id="resulting-mark-input" name="resulting-mark" value="5" style="display: none;" readonly>
+                    
+                    <div class="marks-container">
+                        <button id="mark-value-0" class="mark" type="button">0</button>
+                        <button id="mark-value-1" class="mark" type="button">1</button>
+                        <button id="mark-value-2" class="mark" type="button">2</button>
+                        <button id="mark-value-3" class="mark" type="button">3</button>
+                        <button id="mark-value-4" class="mark" type="button">4</button>
+                        <button id="mark-value-5" class="mark" type="button">5</button>
+                    </div>
+
+                    <input id="comment-input" type="text" value="" name="comment" placeholder="Comment...">
+                    
+                    <button id="prepare-mark">Mark</button>
+                </div>
+			</div>
+		</div>
+
+        <div id="final-form" class="form-layer" style="display: none;">
+            <form id="mark-form" action="#" method="post" class="white-border mark-resulting" style="display: grid;">
+                <div class="shure-upper-row">
+                    <i id="form-go-back" class='bx bx-x'></i>
+                    <p class="shure-text">Are You shure?</p>
+                </div>
+                <div class="shure-mark-container">
+                    <input class="form-mark-value-text" type="text" value="Mark:" readonly></input>
+                    <input id="form-final-mark" class="response-mark" type="text" value="5" name="mark" readonly></input>
+                </div>
+
+                <div id="comment-block" class="comment">
+                    <input value="Your comment:" type="text" class="comment-shure-left-text">
+                    <input id="response-comment" class="response-comment" type="text" value="" name="comment" readonly></input>
+                </div>
+                <button id="finish">Send</button>
+            </form>
+        </div>
+
+    <script src="../Scripts/mark_answer_script.js"></script>
+    </body>
+</html>

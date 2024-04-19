@@ -1,0 +1,11 @@
+.pin-files {
+    display: grid;
+    row-gap: 10px;
+    padding: 0;
+}
+
+#create-answer {
+    padding: 0;
+    margin: 0;
+    justify-self: right;
+}

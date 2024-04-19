@@ -89,3 +89,7 @@ input {
     justify-self: center;
     font-size: 18px;
 }
+
+.left a:hover {
+    color: red;
+}

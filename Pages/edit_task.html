@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap">
+
+		<link rel="stylesheet" href="../Styles/main.css">
+		<link rel="stylesheet" href="../Styles/about_task.css">
+		<link rel="stylesheet" href="../Styles/edit_task.css">
+		<link rel="stylesheet" href="../Styles/file_receiver.css">
+
+		<link rel="shortcut icon" href="../Images/white-shortcut.ico">
+
+        <title>Inspect task</title>
+    </head>
+
+    <body>
+        <div class="go_back_link">
+			<!-- <a id="go_back" href="teacher.html">
+				<i class='bx bx-chevron-left'></i>
+			</a> OR -->
+			<a id="go_back" href="teacher.html">
+				<i class='bx bx-chevron-left'></i>
+			</a>
+		</div>
+		
+		<div class="content">
+			<div class="card white-border blured-container">
+                <div class="top-container">
+                    <h3>Task label</h3>
+                    <p class="sender-id">To: (Username, #id)</p>
+                    
+                    <div class="files"> <!-- style="display: none" if no files else style="display: block" -->
+                        <p>Pinned files actually:</p>
+                        
+                        <!-- Dynamic loading content -->
+                        
+                        <a href="file_template.txt" download="">Pinned file name</a>
+                        
+                        <!-- Dynamic loading content -->
+    
+                    </div>
+                    
+                    <i class='bx bx-edit' id="edit-button"></i>
+                </div>
+
+                <form class="white-border edit-panel" id="edit-panel" style="display: none;" action="#" method="post">
+                    <div class="change-label">
+                        <h3>Change task label:</h3>
+                        <input id="new-label-input" type="text" placeholder="New task label..." value="">
+                    </div>
+    
+                    <div class="horizontal-separator edit-panel-separator"></div>
+    
+                    <div class="repin-files">
+                        <h3>Repin files:</h3>
+    
+                        <div id="drop-zone" class="white-border">
+                            <input type="file" name="files" id="file-receiver" multiple style="display: none;">
+    
+                            <div id="choose-file-or-clean-input">
+                                <button id="choose-file-button" type="button"><i id="button" class='bx bx-folder-open' ></i></button>
+                                
+                                <div id="separator" class="vertical-separator"></div>
+                                
+                                <button id="clear-button" type="button"><i id="button" class='bx bx-trash' ></i></button>
+                            </div>
+                        </div>
+                        
+                        <div id="info">
+                            <p id="info-header">Pinned files:</p>
+                        </div>
+                    </div>
+    
+                    <div id="second-edit-panel-separator" class="horizontal-separator edit-panel-separator"></div>
+    
+                    <div class="buttons-container">
+                        <button id="delete">Delete task</button>
+                        <button id="change">Apply changes</button>
+                    </div>
+                </form>
+			</div>
+		</div>
+		
+        <script>
+            var wrap_edit_panel = document.getElementById('edit-button')
+            var edit_panel = document.getElementById('edit-panel')
+
+            var maximised = false
+
+            wrap_edit_panel.addEventListener(
+                'click',
+                () => {
+                    if (maximised) {
+                        edit_panel.style.display = "none"
+                        maximised = false
+                    }
+                    else {
+                        edit_panel.style.display = "grid"
+                        maximised = true
+                    }
+                }
+            )
+        </script>
+		<script src="../Scripts/file_receiver.js"></script>
+    </body>
+</html>
